@@ -1,0 +1,1 @@
+const double timeIncomeRatePerSecond = 0.00115555555;
