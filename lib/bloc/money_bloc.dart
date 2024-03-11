@@ -7,6 +7,7 @@ import 'package:money_tracker/constants.dart';
 class MoneyBloc extends Bloc<MoneyEvent, MoneyState> with HydratedMixin {
   MoneyBloc({required initialDateTime}) : super( MoneyState(money: 0.0, latestUpdate: initialDateTime)){
     hydrate();
+    add(OnMoneyAddedByTimeDifference());
     on<OnMoneyAdded>((event, emit) {
       emit(MoneyState(money: state.money + event.money, latestUpdate: DateTime.now()));
     });
